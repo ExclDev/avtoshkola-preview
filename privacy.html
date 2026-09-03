@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Политика конфиденциальности — ЦКВ</title>
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" href="assets/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png">
+  <!-- Шрифты на самохостинге, @font-face в css/base.css. Preload только
+       текстового: дисплейный на служебных страницах почти не встречается. -->
+  <link rel="preload" as="font" href="fonts/Manrope-subset.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.build.css?v=c6ff0018">
+  <style>
+    /* Экран 18 «Политика конфиденциальности» дизайн-системы — та же шапка
+       и подвал, что на главной (см. handoff/README.md, «Служебные экраны»).
+       Страница статична, VANILLA JS TOOLKIT не подключаем — только
+       локальный скрипт для бургера и подсветки активного пункта оглавления. */
+    body { background: var(--paper); }
+    .privacy-toc-link { display: flex; align-items: baseline; gap: 8px; padding: 8px 0 8px 12px; font-size: 14px; line-height: 1.4; color: var(--text-body); font-weight: 500; border-left: 2px solid transparent; transition: color 150ms ease, border-color 150ms ease; }
+    .privacy-toc-link:hover { color: var(--text-strong); }
+    .privacy-toc-link.is-active { color: var(--text-strong); font-weight: 700; border-left-color: var(--red); }
+    .privacy-toc-num { color: #9aa0c4; }
+    .privacy-section { padding-bottom: 32px; margin-bottom: 32px; border-bottom: 1px solid var(--border-subtle); }
+    .privacy-section:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .privacy-term { display: flex; flex-direction: column; gap: 4px; padding-left: 16px; border-left: 2px solid rgba(227,30,36,.35); }
+    .privacy-term-title { font-weight: 700; color: var(--text-strong); }
+    @media (min-width: 1024px) {
+      .privacy-toc-sticky { position: sticky; top: 96px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="fixed top-0 left-0 w-full z-50" style="background: rgba(12,23,64,.85); backdrop-filter: blur(6px);">
+    <div class="header-bar flex items-center justify-between gap-5">
+      <a href="./" class="relative flex items-center shrink-0">
+        <span class="relative header-logo-full"><img src="assets/logo/logo-full-light.png" alt="Центральные курсы водителей" width="297" height="67" class="header-logo-full-img block" /></span>
+        <span class="relative header-logo-compact"><img src="assets/logo/logo-compact-light.png" alt="Центральные курсы водителей" width="78" height="49" class="header-logo-compact-img block" /></span>
+      </a>
+      <nav class="hidden xl:flex items-center header-nav font-medium text-[var(--text-on-dark-strong)]">
+        <a href="./#about" class="whitespace-nowrap hover:text-[var(--red-light)] transition">О школе</a>
+        <a href="./#programs" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Программы обучения</a>
+        <a href="./#why" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Почему выбирают нас</a>
+        <a href="./#fleet" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Наш автопарк</a>
+        <a href="./#reviews" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Отзывы</a>
+        <a href="./#contacts" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Контакты</a>
+      </nav>
+      <div class="flex items-center gap-3.5 flex-none">
+        <a href="tel:+73822554455" class="font-bold header-phone text-[var(--text-on-dark-strong)] hover:text-[var(--red-light)] transition">55-44-55</a>
+        <a href="./#promo" class="header-cta header-cta-signup">Записаться</a>
+        <button type="button" data-burger-btn class="xl:hidden flex flex-col justify-center items-center gap-1 w-[46px] h-[46px] rounded-xl flex-none bg-paper/10 transition-colors duration-300" aria-label="Меню" aria-expanded="false">
+          <span class="block h-0.5 w-[18px] bg-paper transition-all duration-300"></span>
+          <span class="block h-0.5 w-[18px] bg-paper transition-all duration-300"></span>
+          <span class="block h-0.5 w-3 bg-red transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div data-mobile-menu class="xl:hidden overflow-y-auto mobile-nav-panel border-t border-red/30" style="max-height:0; opacity:0; transition:max-height 250ms ease, opacity 250ms ease;">
+      <div class="px-6 py-5 flex flex-col gap-4">
+        <a href="./#about" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>О школе</span></a>
+        <a href="./#programs" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Программы обучения</span></a>
+        <a href="./#why" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Почему выбирают нас</span></a>
+        <a href="./#fleet" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Наш автопарк</span></a>
+        <a href="./#reviews" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Отзывы</span></a>
+        <a href="./#contacts" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Контакты</span></a>
+        <div class="flex flex-col gap-2.5 mt-1">
+          <a href="./#promo" class="bg-red text-paper font-bold text-sm px-5 py-3.5 rounded-full text-center">Записаться на обучение</a>
+          <a href="tel:+73822554455" class="border border-paper/25 text-paper font-bold text-sm px-5 py-3.5 rounded-full text-center">Позвонить 55-44-55</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden bg-navy" style="padding: 140px 0 56px;">
+    <span aria-hidden="true" style="position: absolute; right: 24px; top: 8px; font-family: var(--font-display); font-weight: 700; font-synthesis: none; font-size: clamp(56px, 9vw, 140px); line-height: 1; color: rgba(255,255,255,.05); white-space: nowrap;">152-ФЗ</span>
+    <div class="shell relative on-dark">
+      <div class="section-badge is-dark mb-4"><span class="section-badge-dot" aria-hidden="true"></span>Документы школы</div>
+      <h1 class="display-1 text-paper max-w-2xl">Политика конфиденциальности персональных данных</h1>
+      <p class="body-lg mt-4 max-w-2xl">Действует в отношении всей информации, которую Профессиональная образовательная организация частное учреждение «Центральные курсы водителей» может получить о Пользователе на доменном имени <strong class="text-paper">ckv70.ru</strong>.</p>
+      <div class="flex items-center gap-4 mt-4 text-sm text-[var(--text-on-dark)]">
+        <span>ПОО ЧУ «ЦКВ»</span>
+        <span class="w-px h-4 bg-paper/25" aria-hidden="true"></span>
+        <span>Федеральный закон № 152-ФЗ</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="shell py-12 lg:py-16">
+    <details class="lg:hidden mb-8 rounded-2xl border border-navy/10 bg-surface p-4">
+      <summary class="text-xs font-extrabold uppercase tracking-widest text-red cursor-pointer select-none">Содержание</summary>
+      <nav class="flex flex-col mt-3" aria-label="Оглавление">
+        <a href="#term-1" class="privacy-toc-link"><span class="privacy-toc-num">1</span>Термины и определения</a>
+        <a href="#term-2" class="privacy-toc-link"><span class="privacy-toc-num">2</span>Общие положения</a>
+        <a href="#term-3" class="privacy-toc-link"><span class="privacy-toc-num">3</span>Предоставление информации Клиентом</a>
+        <a href="#term-4" class="privacy-toc-link"><span class="privacy-toc-num">4</span>Права Пользователя</a>
+        <a href="#term-5" class="privacy-toc-link"><span class="privacy-toc-num">5</span>Сбор данных через «Яндекс.Метрику»</a>
+        <a href="#term-6" class="privacy-toc-link"><span class="privacy-toc-num">6</span>Файлы cookie</a>
+        <a href="#term-7" class="privacy-toc-link"><span class="privacy-toc-num">7</span>Срок обработки персональных данных</a>
+        <a href="#term-8" class="privacy-toc-link"><span class="privacy-toc-num">8</span>Неразглашение информации</a>
+        <a href="#term-9" class="privacy-toc-link"><span class="privacy-toc-num">9</span>Контакты для запросов</a>
+        <a href="#term-10" class="privacy-toc-link"><span class="privacy-toc-num">10</span>Согласие на использование «Яндекс.Метрики»</a>
+      </nav>
+    </details>
+
+    <div class="grid lg:grid-cols-[220px_1fr] gap-12 items-start">
+      <div class="hidden lg:block privacy-toc-sticky">
+        <div class="text-xs font-extrabold uppercase tracking-widest text-red mb-2">Содержание</div>
+        <nav data-privacy-toc class="flex flex-col" aria-label="Оглавление">
+          <a href="#term-1" class="privacy-toc-link"><span class="privacy-toc-num">1</span>Термины и определения</a>
+          <a href="#term-2" class="privacy-toc-link"><span class="privacy-toc-num">2</span>Общие положения</a>
+          <a href="#term-3" class="privacy-toc-link"><span class="privacy-toc-num">3</span>Предоставление информации Клиентом</a>
+          <a href="#term-4" class="privacy-toc-link"><span class="privacy-toc-num">4</span>Права Пользователя</a>
+          <a href="#term-5" class="privacy-toc-link"><span class="privacy-toc-num">5</span>Сбор данных через «Яндекс.Метрику»</a>
+          <a href="#term-6" class="privacy-toc-link"><span class="privacy-toc-num">6</span>Файлы cookie</a>
+          <a href="#term-7" class="privacy-toc-link"><span class="privacy-toc-num">7</span>Срок обработки персональных данных</a>
+          <a href="#term-8" class="privacy-toc-link"><span class="privacy-toc-num">8</span>Неразглашение информации</a>
+          <a href="#term-9" class="privacy-toc-link"><span class="privacy-toc-num">9</span>Контакты для запросов</a>
+          <a href="#term-10" class="privacy-toc-link"><span class="privacy-toc-num">10</span>Согласие на использование «Яндекс.Метрики»</a>
+        </nav>
+      </div>
+
+      <div class="max-w-[68ch]">
+        <div id="term-1" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">1</span>Термины и определения</h2>
+          <div class="flex flex-col gap-4">
+            <div class="privacy-term">
+              <span class="privacy-term-title">Персональные данные</span>
+              <span class="body">информация, относящаяся к идентифицированному или поддающемуся идентификации человеку (физическому лицу): фамилия, имя, отчество, паспортные данные, адрес проживания, телефон, адрес электронной почты, название организации.</span>
+            </div>
+            <div class="privacy-term">
+              <span class="privacy-term-title">ПОО ЧУ «ЦКВ»</span>
+              <span class="body">является синонимом слов «мы», «нам», «наш» и др.</span>
+            </div>
+            <div class="privacy-term">
+              <span class="privacy-term-title">Клиент (обучающийся)</span>
+              <span class="body">физическое лицо, потребитель услуг ПОО ЧУ «ЦКВ».</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="term-2" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">2</span>Общие положения</h2>
+          <div class="flex flex-col gap-4">
+            <p class="body">Мы производим сбор и обработку персональных данных только с Вашего согласия. Вы самостоятельно принимаете решение, стоит ли выполнять действия, для которых требуется предоставление персональных данных. Однако, если Вы не желаете предоставлять запрашиваемые личные данные, вполне возможно, что Вам не удастся получить наши услуги.</p>
+            <p class="body">Предоставление ПОО ЧУ «ЦКВ» Ваших персональных данных подразумевает Ваше согласие и принятие положений настоящей Политики конфиденциальности. Если Вы не согласны со всеми её условиями, то просим Вас не предоставлять нам никаких персональных данных и не подавать заявление на обучение по учебным программам.</p>
+            <p class="body">ПОО ЧУ «ЦКВ» не проверяет достоверность персональных данных, предоставляемых Клиентом. ПОО ЧУ «ЦКВ» использует предоставленную информацию для выполнения своих обязательств перед Клиентом в соответствии и на основании Федерального закона от 27.07.2006 г. № 152-ФЗ «О персональных данных» (с изм. и доп., вступ. в силу с 01.09.2015 г.).</p>
+          </div>
+        </div>
+
+        <div id="term-3" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">3</span>Предоставление информации Клиентом</h2>
+          <div class="flex flex-col gap-4">
+            <p class="body">Мы собираем Ваши персональные данные, когда Вы регистрируетесь для использования наших услуг. Мы производим сбор только тех персональных данных, которые Вами предоставлены. ПОО ЧУ «ЦКВ» обрабатывает Ваши персональные данные для целей, описанных в настоящей Политике.</p>
+            <p class="body">При подаче заявления на обучение на нашем сайте Клиент предоставляет следующую информацию:</p>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>имя;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>номер телефона;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>выбранная категория обучения.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="term-4" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">4</span>Права Пользователя</h2>
+          <div class="flex flex-col gap-4">
+            <p class="body">В случае если Вы хотите:</p>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>узнать, какими персональными данными о Вас мы располагаем;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>удалить или исправить неточные либо устаревшие персональные данные;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>прекратить обработку нами Ваших персональных данных, —</li>
+            </ul>
+            <p class="body">обратитесь к нам по адресу электронной почты <a href="mailto:ckvtomsk@mail.ru" class="text-red font-bold">ckvtomsk@mail.ru</a>. В этом случае это также может означать, что мы больше не сможем предоставлять Вам услуги.</p>
+          </div>
+        </div>
+
+        <div id="term-5" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">5</span>Сбор данных через «Яндекс.Метрику»</h2>
+          <div class="flex flex-col gap-4">
+            <p class="body">На сайте проходит сбор и обработка персональных данных для анализа пользовательской активности с помощью сервиса «Яндекс.Метрика». Собираются, в частности:</p>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>первый и последний визит пользователя на сайт;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>количество посещений;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>операционная система;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>регион, из которого был сделан запрос к сайту;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>тип устройства;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>история переходов на сайт;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>действия пользователя на страницах сайта: перемещения указателя, клики, прокрутка, изменение размера окна;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>содержимое полей форм, заполняемых пользователем, за исключением полей, помеченных как конфиденциальные;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>переходы по ссылкам, в том числе на внешние ресурсы;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>IP-адрес, тип и версия браузера, разрешение экрана, источник перехода на сайт;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>файлы cookie и аналогичные технологии, используемые сервисом «Яндекс.Метрика» для распознавания повторных визитов.</li>
+            </ul>
+            <p class="body">Сбор указанных данных осуществляется с использованием технологии «Вебвизор», позволяющей воспроизводить действия посетителя на страницах сайта. Данные обрабатываются в обезличенном виде и используются исключительно для анализа работы сайта и улучшения его удобства. Условия обработки данных сервисом «Яндекс.Метрика» определяются документами ООО «ЯНДЕКС», размещёнными по адресу <a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener noreferrer" class="text-red font-bold">https://yandex.ru/legal/confidential/</a>.</p>
+          </div>
+        </div>
+
+        <div id="term-6" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">6</span>Файлы cookie</h2>
+          <div class="flex flex-col gap-4">
+            <p class="body">Сайт использует файлы cookie — небольшие текстовые файлы, сохраняемые браузером на устройстве пользователя. Они применяются для корректной работы сайта, запоминания пользовательских настроек и сбора обезличенной статистики посещений с помощью сервиса «Яндекс.Метрика».</p>
+            <p class="body">Продолжая использовать сайт, пользователь соглашается на использование файлов cookie. Отказаться от их использования можно, изменив настройки браузера или прекратив использование сайта. При отключении файлов cookie отдельные функции сайта могут работать некорректно.</p>
+          </div>
+        </div>
+
+        <div id="term-7" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">7</span>Срок обработки персональных данных</h2>
+          <p class="body">Срок обработки персональных данных действует до достижения целей обработки или получения от субъекта персональных данных требования о прекращении обработки / отзыва согласия.</p>
+        </div>
+
+        <div id="term-8" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">8</span>Неразглашение информации, полученной ПОО ЧУ «ЦКВ»</h2>
+          <div class="flex flex-col gap-4">
+            <p class="body">ПОО ЧУ «ЦКВ» обязуется не разглашать полученную от Клиента информацию.</p>
+            <p class="body">Не считается нарушением:</p>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>предоставление ПОО ЧУ «ЦКВ» информации третьим лицам, действующим на основании договора с ПОО ЧУ «ЦКВ» для исполнения обязательств перед Клиентом;</li>
+              <li class="flex items-start gap-3 body"><span class="w-1.5 h-1.5 rounded-full bg-red flex-none mt-2" aria-hidden="true"></span>разглашение информации в соответствии с обоснованными и применимыми требованиями закона.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="term-9" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">9</span>Контакты для запросов</h2>
+          <p class="body">Запросы относительно персональных данных могут быть направлены по электронному адресу: <a href="mailto:ckvtomsk@mail.ru" class="text-red font-bold">ckvtomsk@mail.ru</a>.</p>
+        </div>
+
+        <div id="term-10" class="privacy-section" data-privacy-section>
+          <h2 class="display-3 text-navy mb-4 flex items-baseline gap-3"><span class="text-red">10</span>Согласие на использование «Яндекс.Метрики»</h2>
+          <div class="flex flex-col gap-4">
+            <p class="body">Продолжая использовать сайт <strong class="text-navy">https://excldev.github.io/avtoshkola-preview/</strong>, Вы тем самым предоставляете своё согласие ПОО ЧУ «Центральные курсы водителей» на автоматизированную и неавтоматизированную обработку данных пользователя с помощью сервиса «Яндекс.Метрика», в том числе на применение технологии «Вебвизор», записывающей действия посетителя на страницах сайта, и на использование файлов cookie в объёме и на условиях, указанных в разделах 5 и 6 настоящей Политики.</p>
+            <p class="body">Согласие предоставляется на срок, указанный в разделе 7 настоящей Политики, и может быть отозвано путём изменения настроек браузера, запрещающего сохранение файлов cookie, либо направлением требования о прекращении обработки по адресу, указанному в разделе 9.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-navy2 relative overflow-hidden">
+    <div class="shell site-footer-inner site-footer-cols relative z-10">
+      <div class="flex flex-col items-start gap-4">
+        <a href="./" class="shrink-0 self-start relative footer-logo-compact">
+          <img src="assets/logo/logo-compact-light.png" alt="Центральные курсы водителей" width="78" height="49" class="footer-logo-compact-img block" />
+        </a>
+        <a href="./" class="shrink-0 self-start relative footer-logo-full">
+          <img src="assets/logo/logo-full-light.png" alt="Центральные курсы водителей" width="297" height="67" class="footer-logo-full-img block" />
+        </a>
+        <div class="section-badge is-dark">Автошкола в Томске с 1994 года</div>
+        <a href="https://2gis.ru/tomsk/geo/422740746055984" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-paper/[0.06] border border-paper/10 px-3 py-1.5 text-[var(--text-on-dark)] text-xs font-semibold hover:border-red/30 hover:text-paper transition">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="#e31e24"><path d="M12 2l2.9 6.6L22 9.3l-5 5 1.3 7.2L12 18l-6.3 3.5L7 14.3l-5-5 7.1-.7L12 2z"/></svg>
+          <span>4.8 · 170+ отзывов на 2ГИС</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="https://vk.ru/ckv.tomsk" target="_blank" rel="noopener" aria-label="ВКонтакте" class="inline-flex w-11 h-11 items-center justify-center rounded-full bg-paper/10 text-paper hover:bg-red transition"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.9 17.4c-5.6 0-8.9-3.9-9-10.3h2.8c.1 4.7 2.1 6.6 3.7 7V7.1h2.7v4.1c1.6-.2 3.2-2 3.8-4.1h2.7c-.4 2.6-2.3 4.4-3.6 5.1 1.3.6 3.5 2.1 4.3 5.2h-3c-.6-2-2.2-3.5-4.2-3.7v3.7h-.2z" /></svg></a>
+          <a href="https://max.ru/u/f9LHodD0cOKHJhI2eCvtUlQRySv-I0m3c637Eoq7rhaFTQLXjRZTY3Spdzc" target="_blank" rel="noopener" aria-label="MAX" class="inline-flex w-11 h-11 items-center justify-center rounded-full bg-paper/10 text-paper hover:bg-red transition"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><g transform="scale(0.0333333)"><path d="M350.4,9.6C141.8,20.5,4.1,184.1,12.8,390.4c3.8,90.3,40.1,168,48.7,253.7,2.2,22.2-4.2,49.6,21.4,59.3,31.5,11.9,79.8-8.1,106.2-26.4,9-6.1,17.6-13.2,24.2-22,27.3,18.1,53.2,35.6,85.7,43.4,143.1,34.3,299.9-44.2,369.6-170.3C799.6,291.2,622.5-4.6,350.4,9.6h0ZM269.4,504c-11.3,8.8-22.2,20.8-34.7,27.7-18.1,9.7-23.7-.4-30.5-16.4-21.4-50.9-24-137.6-11.5-190.9,16.8-72.5,72.9-136.3,150-143.1,78-6.9,150.4,32.7,183.1,104.2,72.4,159.1-112.9,316.2-256.4,218.6h0Z" /></g></svg></a>
+          <a href="https://t.me/CKVTOMSK" target="_blank" rel="noopener" aria-label="Telegram" class="inline-flex w-11 h-11 items-center justify-center rounded-full bg-paper/10 text-paper hover:bg-red transition"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M21 4L2.5 11.2c-.6.2-.6 1 0 1.3l4.6 1.6 1.7 5.2c.2.6 1 .7 1.3.2l2.5-3.2 4.6 3.4c.5.4 1.2.1 1.4-.5L23 5.1c.2-.7-.5-1.3-2-1.1zM8.5 13.5L18 7.2l-8.1 7.6-.2 3.2-1.2-4.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" fill="none" /></svg></a>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <ul class="flex flex-col text-[var(--text-on-dark)] site-footer-links-text">
+          <li><a href="./#about" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">О школе</a></li>
+          <li><a href="./#programs" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Программы обучения</a></li>
+          <li><a href="./#why" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Почему выбирают нас</a></li>
+          <li><a href="./#fleet" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Наш автопарк</a></li>
+          <li><a href="./#reviews" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Отзывы</a></li>
+          <li><a href="./#contacts" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2">
+        <a href="tel:+73822554455" class="min-h-11 inline-flex items-center font-bold text-paper site-footer-phone-text hover:text-[var(--red-light)] transition">55-44-55</a>
+        <a href="mailto:ckvtomsk@mail.ru" class="min-h-11 inline-flex items-center text-[var(--text-on-dark)] site-footer-fine-text hover:text-[var(--red-light)] transition">ckvtomsk@mail.ru</a>
+        <p class="text-[var(--text-on-dark)] site-footer-fine-text leading-relaxed">Красноармейская, 89а<br />Мелиоративная, 2/3</p>
+      </div>
+      <div class="flex flex-col">
+        <a href="http://www.ckvtomsk.ru/" target="_blank" rel="noopener noreferrer" class="min-h-11 inline-flex items-center underline underline-offset-2 text-[var(--text-on-dark)] site-footer-fine-text hover:text-[var(--red-light)] transition">Сведения об образовательной организации</a>
+        <a href="privacy.html" class="min-h-11 inline-flex items-center underline underline-offset-2 site-footer-fine-text transition text-[var(--red-light)]">Политика конфиденциальности</a>
+      </div>
+      <div class="site-footer-cta-card">
+        <div class="rounded-2xl border border-red/20 bg-paper/[0.04] p-6 flex flex-col">
+          <h4 class="display-3 text-paper mb-2">Остались вопросы?</h4>
+          <p class="text-[var(--text-on-dark)] text-sm leading-relaxed mb-5">Запишитесь на бесплатную консультацию</p>
+          <a href="./#promo" class="w-full min-h-[46px] flex items-center justify-center bg-red text-paper font-bold rounded-full text-sm hover:brightness-110 transition">Задать вопрос</a>
+        </div>
+      </div>
+    </div>
+    <div class="shell site-footer-offer relative z-10 text-[var(--text-on-dark)]">
+      <p>© 2026 Центральные курсы водителей. Не является публичной офертой</p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var btn = document.querySelector('[data-burger-btn]');
+    var menu = document.querySelector('[data-mobile-menu]');
+    var open = false;
+    function setOpen(v) {
+      open = v;
+      btn.setAttribute('aria-expanded', v ? 'true' : 'false');
+      if (v) {
+        var bar = btn.closest('header').querySelector('.header-bar');
+        menu.style.maxHeight = Math.max(menu.scrollHeight, window.innerHeight - bar.offsetHeight) + 'px';
+        menu.style.opacity = '1';
+      } else {
+        menu.style.maxHeight = '0px';
+        menu.style.opacity = '0';
+      }
+    }
+    btn.addEventListener('click', function () { setOpen(!open); });
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+  })();
+  (function () {
+    var links = document.querySelectorAll('[data-privacy-toc] .privacy-toc-link');
+    var sections = document.querySelectorAll('[data-privacy-section]');
+    if (!links.length || !sections.length || !('IntersectionObserver' in window)) return;
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var link = byId[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting) {
+          links.forEach(function (a) { a.classList.remove('is-active'); });
+          link.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-100px 0px -70% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  })();
+  </script>
+</body>
+</html>

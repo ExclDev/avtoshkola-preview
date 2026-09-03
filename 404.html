@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Страница не найдена — ЦКВ</title>
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" href="assets/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png">
+  <!-- Шрифты на самохостинге, @font-face в css/base.css. Preload только
+       текстового: дисплейный на служебных страницах почти не встречается. -->
+  <link rel="preload" as="font" href="fonts/Manrope-subset.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.build.css?v=c6ff0018">
+  <style>
+    /* Композиция и диагональ — те же, что на экране 3 «О школе»
+       (.about-hero-diagonal / -shade из css/base.css). Шапка и подвал —
+       тот же лок-ап, что на главной (см. handoff/CLAUDE-CODE-PROMPT.md,
+       раздел 7 «Служебные экраны»); эта страница не подключает VANILLA JS
+       TOOLKIT — только локальный скрипт для бургера. */
+    body { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; }
+    .error-404-hero { position: relative; flex: 1; display: flex; align-items: center; overflow: hidden; padding: 140px 0 64px; }
+    .error-404-digits {
+      position: absolute;
+      right: 4vw;
+      bottom: -4vw;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-synthesis: none;
+      font-size: clamp(140px, 22vw, 340px);
+      line-height: 1;
+      color: rgba(255,255,255,.26);
+      user-select: none;
+      pointer-events: none;
+    }
+    @media (max-width: 767px) {
+      .error-404-digits { color: rgba(255,255,255,.16); font-size: clamp(90px, 34vw, 200px); right: 2vw; }
+    }
+  </style>
+</head>
+<body>
+  <header class="fixed top-0 left-0 w-full z-50" style="background: rgba(12,23,64,.85); backdrop-filter: blur(6px);">
+    <div class="header-bar flex items-center justify-between gap-5">
+      <a href="./" class="relative flex items-center shrink-0">
+        <span class="relative header-logo-full"><img src="assets/logo/logo-full-light.png" alt="Центральные курсы водителей" width="297" height="67" class="header-logo-full-img block" /></span>
+        <span class="relative header-logo-compact"><img src="assets/logo/logo-compact-light.png" alt="Центральные курсы водителей" width="78" height="49" class="header-logo-compact-img block" /></span>
+      </a>
+      <nav class="hidden xl:flex items-center header-nav font-medium text-[var(--text-on-dark-strong)]">
+        <a href="./#about" class="whitespace-nowrap hover:text-[var(--red-light)] transition">О школе</a>
+        <a href="./#programs" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Программы обучения</a>
+        <a href="./#why" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Почему выбирают нас</a>
+        <a href="./#fleet" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Наш автопарк</a>
+        <a href="./#reviews" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Отзывы</a>
+        <a href="./#contacts" class="whitespace-nowrap hover:text-[var(--red-light)] transition">Контакты</a>
+      </nav>
+      <div class="flex items-center gap-3.5 flex-none">
+        <a href="tel:+73822554455" class="font-bold header-phone text-[var(--text-on-dark-strong)] hover:text-[var(--red-light)] transition">55-44-55</a>
+        <a href="./#promo" class="header-cta header-cta-signup">Записаться</a>
+        <button type="button" data-burger-btn class="xl:hidden flex flex-col justify-center items-center gap-1 w-[46px] h-[46px] rounded-xl flex-none bg-paper/10 transition-colors duration-300" aria-label="Меню" aria-expanded="false">
+          <span class="block h-0.5 w-[18px] bg-paper transition-all duration-300"></span>
+          <span class="block h-0.5 w-[18px] bg-paper transition-all duration-300"></span>
+          <span class="block h-0.5 w-3 bg-red transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div data-mobile-menu class="xl:hidden overflow-y-auto mobile-nav-panel border-t border-red/30" style="max-height:0; opacity:0; transition:max-height 250ms ease, opacity 250ms ease;">
+      <div class="px-6 py-5 flex flex-col gap-4">
+        <a href="./#about" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>О школе</span></a>
+        <a href="./#programs" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Программы обучения</span></a>
+        <a href="./#why" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Почему выбирают нас</span></a>
+        <a href="./#fleet" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Наш автопарк</span></a>
+        <a href="./#reviews" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Отзывы</span></a>
+        <a href="./#contacts" class="mobile-nav-link flex items-center gap-2.5 text-[var(--text-on-dark-strong)] text-[18px] font-medium" style="height:52px"><span class="mobile-nav-link-dot" aria-hidden="true"></span><span>Контакты</span></a>
+        <div class="flex flex-col gap-2.5 mt-1">
+          <a href="./#promo" class="bg-red text-paper font-bold text-sm px-5 py-3.5 rounded-full text-center">Записаться на обучение</a>
+          <a href="tel:+73822554455" class="border border-paper/25 text-paper font-bold text-sm px-5 py-3.5 rounded-full text-center">Позвонить 55-44-55</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="error-404-hero">
+    <div class="about-hero-diagonal hidden lg:block" aria-hidden="true"></div>
+    <div class="about-hero-diagonal-shade hidden lg:block" aria-hidden="true"></div>
+    <span class="error-404-digits" aria-hidden="true">404</span>
+    <div class="shell relative z-10 on-dark">
+      <div class="section-badge is-dark mb-3"><span class="section-badge-dot" aria-hidden="true"></span>Ошибка 404</div>
+      <h1 class="display-2 text-paper max-w-xl">Кажется, вы свернули не туда</h1>
+      <p class="body-lg mt-5 max-w-lg">Такой страницы нет — возможно, ссылка устарела или в адресе опечатка. Загляните на главную или сразу выберите программу обучения.</p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="./" class="btn-primary whitespace-nowrap">На главную</a>
+        <a href="./#promo" class="btn-outline whitespace-nowrap">Записаться на обучение</a>
+      </div>
+      <div class="flex flex-wrap gap-x-3 gap-y-2 mt-8 text-sm">
+        <a href="./#programs" class="inline-flex items-center gap-2 rounded-full border border-paper/25 text-paper font-semibold px-4 py-2 hover:border-red/60 hover:text-[var(--red-light)] transition">Программы обучения</a>
+        <a href="./#fleet" class="inline-flex items-center gap-2 rounded-full border border-paper/25 text-paper font-semibold px-4 py-2 hover:border-red/60 hover:text-[var(--red-light)] transition">Наш автопарк</a>
+        <a href="./#reviews" class="inline-flex items-center gap-2 rounded-full border border-paper/25 text-paper font-semibold px-4 py-2 hover:border-red/60 hover:text-[var(--red-light)] transition">Отзывы</a>
+        <a href="./#contacts" class="inline-flex items-center gap-2 rounded-full border border-paper/25 text-paper font-semibold px-4 py-2 hover:border-red/60 hover:text-[var(--red-light)] transition">Контакты</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-navy2 relative overflow-hidden">
+    <div class="shell site-footer-inner site-footer-cols relative z-10">
+      <div class="flex flex-col items-start gap-4">
+        <a href="./" class="shrink-0 self-start relative footer-logo-compact">
+          <img src="assets/logo/logo-compact-light.png" alt="Центральные курсы водителей" width="78" height="49" class="footer-logo-compact-img block" />
+        </a>
+        <a href="./" class="shrink-0 self-start relative footer-logo-full">
+          <img src="assets/logo/logo-full-light.png" alt="Центральные курсы водителей" width="297" height="67" class="footer-logo-full-img block" />
+        </a>
+        <div class="section-badge is-dark">Автошкола в Томске с 1994 года</div>
+        <a href="https://2gis.ru/tomsk/geo/422740746055984" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-paper/[0.06] border border-paper/10 px-3 py-1.5 text-[var(--text-on-dark)] text-xs font-semibold hover:border-red/30 hover:text-paper transition">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="#e31e24"><path d="M12 2l2.9 6.6L22 9.3l-5 5 1.3 7.2L12 18l-6.3 3.5L7 14.3l-5-5 7.1-.7L12 2z"/></svg>
+          <span>4.8 · 170+ отзывов на 2ГИС</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="https://vk.ru/ckv.tomsk" target="_blank" rel="noopener" aria-label="ВКонтакте" class="inline-flex w-11 h-11 items-center justify-center rounded-full bg-paper/10 text-paper hover:bg-red transition"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.9 17.4c-5.6 0-8.9-3.9-9-10.3h2.8c.1 4.7 2.1 6.6 3.7 7V7.1h2.7v4.1c1.6-.2 3.2-2 3.8-4.1h2.7c-.4 2.6-2.3 4.4-3.6 5.1 1.3.6 3.5 2.1 4.3 5.2h-3c-.6-2-2.2-3.5-4.2-3.7v3.7h-.2z" /></svg></a>
+          <a href="https://max.ru/u/f9LHodD0cOKHJhI2eCvtUlQRySv-I0m3c637Eoq7rhaFTQLXjRZTY3Spdzc" target="_blank" rel="noopener" aria-label="MAX" class="inline-flex w-11 h-11 items-center justify-center rounded-full bg-paper/10 text-paper hover:bg-red transition"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><g transform="scale(0.0333333)"><path d="M350.4,9.6C141.8,20.5,4.1,184.1,12.8,390.4c3.8,90.3,40.1,168,48.7,253.7,2.2,22.2-4.2,49.6,21.4,59.3,31.5,11.9,79.8-8.1,106.2-26.4,9-6.1,17.6-13.2,24.2-22,27.3,18.1,53.2,35.6,85.7,43.4,143.1,34.3,299.9-44.2,369.6-170.3C799.6,291.2,622.5-4.6,350.4,9.6h0ZM269.4,504c-11.3,8.8-22.2,20.8-34.7,27.7-18.1,9.7-23.7-.4-30.5-16.4-21.4-50.9-24-137.6-11.5-190.9,16.8-72.5,72.9-136.3,150-143.1,78-6.9,150.4,32.7,183.1,104.2,72.4,159.1-112.9,316.2-256.4,218.6h0Z" /></g></svg></a>
+          <a href="https://t.me/CKVTOMSK" target="_blank" rel="noopener" aria-label="Telegram" class="inline-flex w-11 h-11 items-center justify-center rounded-full bg-paper/10 text-paper hover:bg-red transition"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M21 4L2.5 11.2c-.6.2-.6 1 0 1.3l4.6 1.6 1.7 5.2c.2.6 1 .7 1.3.2l2.5-3.2 4.6 3.4c.5.4 1.2.1 1.4-.5L23 5.1c.2-.7-.5-1.3-2-1.1zM8.5 13.5L18 7.2l-8.1 7.6-.2 3.2-1.2-4.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" fill="none" /></svg></a>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <ul class="flex flex-col text-[var(--text-on-dark)] site-footer-links-text">
+          <li><a href="./#about" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">О школе</a></li>
+          <li><a href="./#programs" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Программы обучения</a></li>
+          <li><a href="./#why" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Почему выбирают нас</a></li>
+          <li><a href="./#fleet" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Наш автопарк</a></li>
+          <li><a href="./#reviews" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Отзывы</a></li>
+          <li><a href="./#contacts" class="min-h-11 inline-flex items-center hover:text-[var(--red-light)] transition-colors duration-300">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2">
+        <a href="tel:+73822554455" class="min-h-11 inline-flex items-center font-bold text-paper site-footer-phone-text hover:text-[var(--red-light)] transition">55-44-55</a>
+        <a href="mailto:ckvtomsk@mail.ru" class="min-h-11 inline-flex items-center text-[var(--text-on-dark)] site-footer-fine-text hover:text-[var(--red-light)] transition">ckvtomsk@mail.ru</a>
+        <p class="text-[var(--text-on-dark)] site-footer-fine-text leading-relaxed">Красноармейская, 89а<br />Мелиоративная, 2/3</p>
+      </div>
+      <div class="flex flex-col">
+        <a href="http://www.ckvtomsk.ru/" target="_blank" rel="noopener noreferrer" class="min-h-11 inline-flex items-center underline underline-offset-2 text-[var(--text-on-dark)] site-footer-fine-text hover:text-[var(--red-light)] transition">Сведения об образовательной организации</a>
+        <a href="privacy.html" class="min-h-11 inline-flex items-center underline underline-offset-2 text-[var(--text-on-dark)] site-footer-fine-text hover:text-[var(--red-light)] transition">Политика конфиденциальности</a>
+      </div>
+      <div class="site-footer-cta-card">
+        <div class="rounded-2xl border border-red/20 bg-paper/[0.04] p-6 flex flex-col">
+          <h4 class="display-3 text-paper mb-2">Остались вопросы?</h4>
+          <p class="text-[var(--text-on-dark)] text-sm leading-relaxed mb-5">Запишитесь на бесплатную консультацию</p>
+          <a href="./#promo" class="w-full min-h-[46px] flex items-center justify-center bg-red text-paper font-bold rounded-full text-sm hover:brightness-110 transition">Задать вопрос</a>
+        </div>
+      </div>
+    </div>
+    <div class="shell site-footer-offer relative z-10 text-[var(--text-on-dark)]">
+      <p>© 2026 Центральные курсы водителей. Не является публичной офертой</p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var btn = document.querySelector('[data-burger-btn]');
+    var menu = document.querySelector('[data-mobile-menu]');
+    var open = false;
+    function setOpen(v) {
+      open = v;
+      btn.setAttribute('aria-expanded', v ? 'true' : 'false');
+      if (v) {
+        var bar = btn.closest('header').querySelector('.header-bar');
+        menu.style.maxHeight = Math.max(menu.scrollHeight, window.innerHeight - bar.offsetHeight) + 'px';
+        menu.style.opacity = '1';
+      } else {
+        menu.style.maxHeight = '0px';
+        menu.style.opacity = '0';
+      }
+    }
+    btn.addEventListener('click', function () { setOpen(!open); });
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+  })();
+  </script>
+</body>
+</html>
