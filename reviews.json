@@ -1,0 +1,139 @@
+{
+  "_comment": "meta.count/rating — карточка 2ГИС 422740746055984 (учебный класс): рейтинг «5» без десятых, 185 отзывов (не оценок — их 238, 2ГИС считает отдельно). Сверено вручную 14.10.2026 через window.initialState.reviews на странице карточки. При обновлении синхронизировать с REVIEWS_FALLBACK.meta и строкой подвала в index.html (строка подвала теперь сама берёт значения из REVIEWS_FALLBACK.meta — см. CLAUDE.md) и со статичным футером в 404.html/thanks.html/privacy.html.",
+  "meta": {
+    "rating": 5,
+    "count": 185
+  },
+  "reviews": [
+    {
+      "id": 1,
+      "author": "Полина вершинина",
+      "initials": "ПВ",
+      "color": "red",
+      "date": "2026",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": null,
+      "instructor": null,
+      "verified": true,
+      "text": "Прошла обучение в этой автошколе,осталась очень довольна. Отдельное спасибо инструктору по вождению. Сдала экзамен с первого раза."
+    },
+    {
+      "id": 2,
+      "author": "Ярослав Курилов",
+      "initials": "ЯК",
+      "color": "green",
+      "date": "2026",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": null,
+      "instructor": null,
+      "verified": false,
+      "text": "Отличная автошкола, хорошие организаторы, отличные инструкторы, комфортные условия обучения."
+    },
+    {
+      "id": 3,
+      "author": "Валерия Синицина",
+      "initials": "ВС",
+      "color": "blue",
+      "date": "2026",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": null,
+      "instructor": "Артём",
+      "verified": false,
+      "text": "Хорошая автошкола! Сдала все экзамены с первого раза благодаря самому лучшему инструктору Артёму🙏🏻"
+    },
+    {
+      "id": 4,
+      "author": "Тимофей Тим",
+      "initials": "ТТ",
+      "color": "orange",
+      "date": "2026",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": "Категория А1",
+      "instructor": null,
+      "verified": true,
+      "text": "Учился на категорию А1,всем большое спасибо за обучение. Катаюсь и радуюсь"
+    },
+    {
+      "id": 5,
+      "author": "Алексей Шафран",
+      "initials": "АШ",
+      "color": "red",
+      "date": "2026",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": "Категория А",
+      "instructor": null,
+      "verified": true,
+      "text": "Обучение на категорию А. Успешная сдача с первого раза."
+    },
+    {
+      "id": 6,
+      "author": "Максим Кондрашов",
+      "initials": "МК",
+      "color": "blue",
+      "date": "2026",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": "Категория А",
+      "instructor": null,
+      "verified": false,
+      "text": "Отличная автошкола, сдал все с первого раза на кат. А, скорее всего на В буду здесь же учиться."
+    },
+    {
+      "id": 7,
+      "author": "Станислав Эрикович",
+      "initials": "СЭ",
+      "color": "orange",
+      "date": "2026",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": null,
+      "instructor": null,
+      "verified": false,
+      "text": "Хорошая автошкола сдал с первого раза рекомендую!!!"
+    },
+    {
+      "id": 8,
+      "author": "Тая Власова",
+      "initials": "ТВ",
+      "color": "blue",
+      "date": "2025",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": null,
+      "instructor": null,
+      "verified": false,
+      "text": "Отличная школа, в Гаи сдала с первой попытки, рекомендую 👍"
+    },
+    {
+      "id": 9,
+      "author": "Сергей Казанцев",
+      "initials": "СК",
+      "color": "green",
+      "date": "2025",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": "Категория А1",
+      "instructor": null,
+      "verified": false,
+      "text": "Сдал на права А1 категории. Инструктор на теории объяснял понятно и внятно. На практике даже почти без инструктора обошёлся, быстро привык, так как уже имелся опыт. Всё понравилось, балаклаву подарили"
+    },
+    {
+      "id": 10,
+      "author": "Кирилл Терентьев",
+      "initials": "КТ",
+      "color": "red",
+      "date": "2024",
+      "rating": 5,
+      "source": "2ГИС",
+      "category": null,
+      "instructor": null,
+      "verified": false,
+      "text": "Классная школа с ответственным подходом,в отличии от некоторых."
+    }
+  ]
+}
